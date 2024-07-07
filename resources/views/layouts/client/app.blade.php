@@ -72,8 +72,17 @@
             color: white;
         }
 
+        .secondary-bg {
+            background-color: #252525;
+            color: white;
+        }
+
         .primary-color {
             color: #AE1F24;
+        }
+
+        .secondary-color {
+            color: #252525;
         }
 
         .content {
@@ -82,13 +91,14 @@
         }
 
         .header {
-            color: white;
-            background-color: #1C7293;
+            color: #000;
+            background-color: #ffffff;
             backdrop-filter: blur(20px);
         }
 
         .footer {
-            background-color: #BCECFF;
+            color: #fff;
+            background-color: #252525;
         }
 
         .modal-content {

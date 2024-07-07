@@ -20,8 +20,8 @@ class TypeSeeder extends Seeder
         $types = [
             [
                 'id' => Str::uuid(),
-                'category_id' => $this->category('Kategori 1'),
-                'name' => 'Tipe 1.1',
+                'category_id' => $this->category('Category 1'),
+                'name' => 'Type 1.1',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -29,8 +29,8 @@ class TypeSeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'category_id' => $this->category('Kategori 1'),
-                'name' => 'Tipe 1.2',
+                'category_id' => $this->category('Category 1'),
+                'name' => 'Type 1.2',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -38,8 +38,8 @@ class TypeSeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'category_id' => $this->category('Kategori 1'),
-                'name' => 'Tipe 1.3',
+                'category_id' => $this->category('Category 1'),
+                'name' => 'Type 1.3',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -47,8 +47,8 @@ class TypeSeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'category_id' => $this->category('Kategori 2'),
-                'name' => 'Tipe 2.1',
+                'category_id' => $this->category('Category 2'),
+                'name' => 'Type 2.1',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -56,8 +56,8 @@ class TypeSeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'category_id' => $this->category('Kategori 2'),
-                'name' => 'Tipe 2.2',
+                'category_id' => $this->category('Category 2'),
+                'name' => 'Type 2.2',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -65,8 +65,8 @@ class TypeSeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'category_id' => $this->category('Kategori 3'),
-                'name' => 'Tipe 3',
+                'category_id' => $this->category('Category 3'),
+                'name' => 'Type 3',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -74,8 +74,8 @@ class TypeSeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'category_id' => $this->category('Kategori 4'),
-                'name' => 'Tipe 4',
+                'category_id' => $this->category('Category 4'),
+                'name' => 'Type 4',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),

@@ -37,7 +37,7 @@ class AdminBookingController extends Controller
             'status' => $request->status,
         ]);
 
-        return back()->with('alert', 'Berhasil Edit Data booking!');
+        return back()->with('alert', 'Success Edit Data booking!');
     }
 
     public function destroy($id)
@@ -45,6 +45,6 @@ class AdminBookingController extends Controller
         $booking = Booking::findOrFail($id);
         $booking->delete();
 
-        return back()->with('alert', 'Berhasil Hapus Data booking!');
+        return back()->with('alert', 'Success Delete Data booking!');
     }
 }

@@ -3,9 +3,9 @@ use Carbon\Carbon;
 ?>
 @extends('layouts.client.app')
 
-@section('title', 'Jadwal')
+@section('title', 'Schedule')
 
-@section('textEvent', 'primary-bg rounded')
+@section('textEvent', 'primary-bg text-white rounded')
 
 @section('content')
 
@@ -22,7 +22,7 @@ use Carbon\Carbon;
                                 <h3 class="text-left">{{ Carbon::parse($schedule->datetime)->translatedFormat('l') }}</h3>
                                 <h3 class="text-left fw-bold">{{ $schedule->name }}</h3>
                                 <p class="text-left border-bottom pb-2">{{ $schedule->location }}</p>
-                                <h4 class="text-left fw-bold">Deskripsi Event</h4>
+                                <h4 class="text-left fw-bold">Event Description</h4>
                                 <p class="text-left">{{ $schedule->desc }}</p>
                             </div>
                         </a>
@@ -67,7 +67,7 @@ use Carbon\Carbon;
                 filterProducts(null);
             });
 
-            // Tampilkan semua produk pada awal halaman di-load
+            // Tampilkan semua Product pada awal halaman di-load
             filterProducts(null);
         });
     </script>

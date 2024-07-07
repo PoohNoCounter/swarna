@@ -3,9 +3,9 @@ use Carbon\Carbon;
 ?>
 @extends('layouts.client.app')
 
-@section('title', 'Detail Jadwal')
+@section('title', 'Detail Schedule')
 
-@section('textEvent', 'primary-bg rounded')
+@section('textEvent', 'primary-bg text-white rounded')
 
 @section('content')
 
@@ -18,10 +18,10 @@ use Carbon\Carbon;
                     <h3 class="text-left">{{ Carbon::parse($schedule->datetime)->translatedFormat('l') }}</h3>
                     <h3 class="text-left fw-bold">{{ $schedule->name }}</h3>
                     <p class="text-left border-bottom pb-2">{{ $schedule->location }}</p>
-                    <h4 class="text-left fw-bold">Deskripsi Event</h4>
+                    <h4 class="text-left fw-bold">Event Description</h4>
                     <p class="text-left">{{ $schedule->desc }}</p>
                     <div class="text-right">
-                        <a href="{{ route('schedule.index') }}" class="btn col-md-2 btn-danger primary-bg">Kembali</a>
+                        <a href="{{ route('schedule.index') }}" class="btn col-md-2 btn-danger primary-bg">Back</a>
                     </div>
                 </div>
             </div>

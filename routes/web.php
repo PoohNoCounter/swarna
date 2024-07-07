@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\AdminInventoryController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminBookingController;
 use App\Http\Controllers\Admin\AdminScheduleController;
+use App\Http\Controllers\Client\ClientCartController;
 use App\Http\Controllers\Client\ClientBookingController;
 use App\Http\Controllers\Client\ClientProductController;
 use App\Http\Controllers\Client\ClientScheduleController;
@@ -42,6 +43,10 @@ Route::post('/register', [RegisterController::class, 'create'])->name('regist');
 Route::middleware(['auth'])->group(function () {
 
   Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+  Route::post('/product/store', [ClientProductController::class, 'cart'])->name('product.store');
+  Route::get('/cart', [ClientCartController::class, 'index'])->name('cart');
+  Route::get('/cart/{id}', [ClientCartController::class, 'update'])->name('cart.update');
+  Route::delete('/cart/{id}/destroy', [ClientCartController::class, 'destroy'])->name('cart.destroy');
   Route::get('/booking', [ClientBookingController::class, 'index'])->name('booking');
   Route::get('/booking/{id}', [ClientBookingController::class, 'show'])->name('booking.show');
 

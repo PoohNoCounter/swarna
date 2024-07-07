@@ -23,9 +23,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="mb-2">
-                            <label class="form-label">{{ __('Nama') }}</label>
+                            <label class="form-label">{{ __('Name') }}</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                placeholder="Nama..." name="name" id="name" value="{{ $user->name }}"
+                                placeholder="Name..." name="name" id="name" value="{{ $user->name }}"
                                 required>
                             @error('name')
                                 <div class="invalid-feedback">{{ $message }}
@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="mb-2">
-                            <label class="form-label">{{ __('No HP') }}</label>
+                            <label class="form-label">{{ __('Phone') }}</label>
                             <input type="text" class="form-control @error('no_hp') is-invalid @enderror"
                                 placeholder="08123456789" name="no_hp" id="no_hp" value="{{ $user->no_hp }}"
                                 required>
@@ -47,11 +47,11 @@
                     </div>
                     <div class="col-md-12">
                         <div class="mb-2">
-                            <label class="form-label">{{ __('Alamat') }}</label>
-                            <input type="text" class="form-control @error('alamat') is-invalid @enderror"
-                                placeholder="Lampung..." name="alamat" id="alamat" value="{{ $user->alamat }}"
+                            <label class="form-label">{{ __('location') }}</label>
+                            <input type="text" class="form-control @error('location') is-invalid @enderror"
+                                placeholder="Lampung..." name="location" id="location" value="{{ $user->location }}"
                                 required>
-                            @error('alamat')
+                            @error('location')
                                 <div class="invalid-feedback">{{ $message }}
                                 </div>
                             @enderror
@@ -63,7 +63,7 @@
                         <div class="mb-3">
                             <label class="form-label">{{ __('Email') }}</label>
                             <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                placeholder="test@gmail.com" name="email" id="email" value="{{ $user->email }}"
+                                placeholder="name@gmail.com" name="email" id="email" value="{{ $user->email }}"
                                 required>
                             @error('email')
                                 <div class="invalid-feedback">{{ $message }}

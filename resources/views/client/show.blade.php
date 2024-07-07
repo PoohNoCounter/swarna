@@ -1,15 +1,15 @@
 @extends('layouts.client.app')
 
-@section('title', 'Produk')
+@section('title', 'Product')
 
-@section('textProduct', 'primary-bg rounded')
+@section('textProduct', 'primary-bg text-white rounded')
 
 @section('content')
 
     <div class="text-center py-5">
         <div class="container py-5">
             <div class="row">
-                <div class="col-md-2 pt-3 header rounded">
+                <div class="col-md-2 pt-3 secondary-bg rounded">
                     <a href="#" class="card border rounded p-2" id="all-types">
                         <p class="my-0">All</p>
                     </a>
@@ -31,10 +31,17 @@
                         @foreach ($products as $product)
                             <a href="{{ route('product.show', $product->id) }}" class="col-4 col-md-4 mb-3 product-card"
                                 data-type-id="{{ $product->type_id }}">
-                                <div class="border rounded p-2 mx-auto">
-                                    <img class="img img-fluid" loading="lazy" width="100px"
-                                        src="{{ asset('assets/img/' . $product->img) }}" alt="">
-                                    <p class="my-0">{{ $product->name }}</p>
+                                <div class="border rounded p-2 mx-auto secondary-bg">
+                                    <div class="border-bottom p-2 mb-2 bg-light">
+                                        <img class="img img-fluid" loading="lazy" width="200px"
+                                            src="{{ asset('assets/img/' . $product->img) }}" alt="">
+                                    </div>
+                                    <p class="my-0 text-left fw-bold">
+                                        Rp{{ number_format($product->price ?? 0, 0, ',', '.') }}/day
+                                    </p>
+                                    <p class="my-0 text-left">{{ $product->name }} - {{ $product->type->category->name }}
+                                        ({{ $product->type->name }})
+                                    </p>
                                 </div>
                             </a>
                         @endforeach
@@ -73,7 +80,7 @@
                 filterProducts(null);
             });
 
-            // Tampilkan semua produk pada awal halaman di-load
+            // Tampilkan semua Product pada awal halaman di-load
             filterProducts(null);
         });
     </script>

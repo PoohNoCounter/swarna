@@ -39,7 +39,7 @@ class AdminCategoryController extends Controller
             $img->move('../public/assets/img/', $file_name);
         }
 
-        return back()->with('alert', 'Berhasil Tambah Data Category!');
+        return back()->with('alert', 'Success Create Data Category!');
     }
 
     public function update(Request $request, $id)
@@ -66,7 +66,7 @@ class AdminCategoryController extends Controller
             $img->move('../public/assets/img/', $file_name);
         }
 
-        return back()->with('alert', 'Berhasil Edit Data Category!');
+        return back()->with('alert', 'Success Edit Data Category!');
     }
 
     public function destroy($id)
@@ -74,6 +74,6 @@ class AdminCategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->delete();
 
-        return back()->with('alert', 'Berhasil Hapus Data Category!');
+        return back()->with('alert', 'Success Delete Data Category!');
     }
 }

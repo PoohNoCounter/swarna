@@ -1,8 +1,8 @@
 @extends('layouts.client.app')
 
-@section('title', 'Produk')
+@section('title', 'Product')
 
-@section('textProduct', 'primary-bg rounded')
+@section('textProduct', 'primary-bg text-white rounded')
 
 @section('content')
 
@@ -13,9 +13,9 @@
                 @foreach ($products as $product)
                     <a href="{{ route('product.show', $product->id) }}" class="col-4 col-md-3 mb-3 product-card"
                         data-type-id="{{ $product->type_id }}">
-                        <div class="border rounded p-2 mx-auto">
-                            <div class="border-bottom p-2 mb-2">
-                                <img class="img img-fluid" loading="lazy" width="100px"
+                        <div class="border rounded p-2 mx-auto secondary-bg">
+                            <div class="border-bottom p-2 mb-2 bg-light">
+                                <img class="img img-fluid" loading="lazy" width="200px"
                                     src="{{ asset('assets/img/' . $product->img) }}" alt="">
                             </div>
                             <p class="my-0 text-left fw-bold">Rp{{ number_format($product->price ?? 0, 0, ',', '.') }}/day

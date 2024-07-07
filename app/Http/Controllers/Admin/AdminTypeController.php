@@ -43,7 +43,7 @@ class AdminTypeController extends Controller
             $img->move('../public/assets/img/', $file_name);
         }
 
-        return back()->with('alert', 'Berhasil Tambah Data type!');
+        return back()->with('alert', 'Success Create Data type!');
     }
 
     public function update(Request $request, $id)
@@ -72,7 +72,7 @@ class AdminTypeController extends Controller
             $img->move('../public/assets/img/', $file_name);
         }
 
-        return back()->with('alert', 'Berhasil Edit Data type!');
+        return back()->with('alert', 'Success Edit Data type!');
     }
 
     public function destroy($id)
@@ -80,6 +80,6 @@ class AdminTypeController extends Controller
         $type = Type::findOrFail($id);
         $type->delete();
 
-        return back()->with('alert', 'Berhasil Hapus Data type!');
+        return back()->with('alert', 'Success Delete Data type!');
     }
 }

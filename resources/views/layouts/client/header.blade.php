@@ -4,61 +4,53 @@ use Illuminate\Support\Facades\Auth;
 
 <header class="header px-3 mb-3 fixed-top border-bottom">
     <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-                {{-- Kiri --}}
-                <ul class="nav">
+        <nav class="navbar navbar-expand-lg navbar-light py-0">
+            <a class="navbar-brand" href="#">
+                <img class="img img-fluid me-3" width="100" src="{{ asset('assets/img/logo_full.png') }}" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <img class="img img-fluid me-3" width="100" src="{{ asset('assets/img/logo_full.png') }}"
-                            alt="Logo">
+                        <a href="{{ route('beranda') }}" style="color: black"
+                            class="nav-link py-3 px-3 fw-bold fs-5 @yield('textHome')">{{ __('Home') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('beranda') }}"
-                            class="nav-link py-3 px-3 fw-bold fs-5 text-white @yield('textHome')">{{ __('Home') }}</a>
-                    </li>
-                    {{-- <li class="nav-item">
-                        <a href="{{ route('about') }}"
-                        class="nav-link py-3 px-3 fw-bold fs-5 text-white @yield('textAbout')">{{ __('About') }}</a>
-                    </li> --}}
-                    <li class="nav-item">
-                        <a href="{{ route('schedule.index') }}"
-                            class="nav-link py-3 px-3 fw-bold fs-5 text-white @yield('textEvent')">{{ __('Event') }}</a>
+                        <a href="{{ route('schedule.index') }}" style="color: black"
+                            class="nav-link py-3 px-3 fw-bold fs-5 @yield('textEvent')">{{ __('Event') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('product.index') }}"
-                            class="nav-link py-3 px-3 fw-bold fs-5 text-white @yield('textProduct')">{{ __('Produk') }}</a>
+                        <a href="{{ route('product.index') }}" style="color: black"
+                            class="nav-link py-3 px-3 fw-bold fs-5 @yield('textProduct')">{{ __('Product') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('booking') }}"
-                            class="nav-link py-3 px-3 fw-bold fs-5 text-white @yield('textBooking')">{{ __('Pesanan Saya') }}</a>
+                        <a href="{{ route('booking') }}" style="color: black"
+                            class="nav-link py-3 px-3 fw-bold fs-5 @yield('textBooking')">{{ __('My Booking') }}</a>
                     </li>
                 </ul>
-            </div>
-            <div class="d-flex align-items-center">
-                {{-- Kanan --}}
-                <ul class="nav">
+                <form class="d-flex" action="{{ route('search') }}" method="GET">
+                    <input type="text" class="form-control" name="query" placeholder="Search..."
+                        value="{{ request('query') }}">
+                    <button class="btn w-25 secondary-bg border" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <form action="{{ route('search') }}" method="GET">
-                            <div class="d-flex justify-content-center align-items-center px-5 py-3">
-                                <input type="text" class="form-control" name="query" placeholder="Cari..."
-                                    value="{{ request('query') }}">
-                                <button class="btn w-25 text-white aktif border" type="submit">Cari</button>
-                            </div>
-                        </form>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('booking') }}"
-                            class="nav-link py-3 px-3 fw-bold fs-5 text-white @yield('')"><i
-                                class="fa fa-shopping-cart primary-color"></i></a>
+                        <a href="{{ route('cart') }}" style="color: black"
+                            class="nav-link py-3 px-3 fw-bold fs-5 @yield('textCart')">
+                            <i class="fa fa-shopping-cart secondary-color"></i>
+                        </a>
                     </li>
                     @if (Auth::check())
-                        <li class="nav-item dropdown d-flex align-items-center">
-                            <button class="btn dropdown-toggle text-white d-flex align-items-center" type="button"
-                                id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"
-                                style="color: #0093E9">
+                        <li class="nav-item dropdown pt-2">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                style="color: black">
                                 {{ Auth::user()->name }} <i class="fas fa-user-circle ms-2 fa-2x"></i>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <li>
                                     <form action="{{ route('logout') }}" method="POST">
                                         @csrf
@@ -68,13 +60,14 @@ use Illuminate\Support\Facades\Auth;
                             </ul>
                         </li>
                     @else
-                        <li class="nav-item d-flex align-items-center">
-                            <a href="{{ route('login') }}" class="btn btn-danger primary-bg ms-3">Masuk</a>
+                        <li class="nav-item py-3">
+                            <a href="{{ route('login') }}" class="btn btn-dark secondary-bg ms-3">Login</a>
                         </li>
                     @endif
                 </ul>
             </div>
-        </div>
+        </nav>
     </div>
 </header>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

@@ -23,9 +23,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">{{ __('Nama') }}</label>
+                            <label class="form-label">{{ __('Name') }}</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                placeholder="Nama..." name="name" id="name" value="{{ $type->name }}"
+                                placeholder="Name..." name="name" id="name" value="{{ $type->name }}"
                                 required>
                             @error('name')
                                 <div class="invalid-feedback">{{ $message }}
@@ -35,10 +35,10 @@
                     </div>
                     <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">{{ __('Kategori') }}</label>
+                            <label class="form-label">{{ __('Category') }}</label>
                             <select class="form-select @error('category_id') is-invalid @enderror" name="category_id"
                                 id="category_id" required>
-                                <option selected disabled>{{ __('Select Kategori') }}</option>
+                                <option selected disabled>{{ __('Select Category') }}</option>
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}"
                                         {{ $category->id == $type->category_id ? 'selected' : '' }}>
@@ -53,8 +53,8 @@
                     </div>
                     <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">{{ __('Deskripsi') }}</label>
-                            <textarea class="form-control @error('desc') is-invalid @enderror" placeholder="Deskripsi..." name="desc"
+                            <label class="form-label">{{ __('Description') }}</label>
+                            <textarea class="form-control @error('desc') is-invalid @enderror" placeholder="Description..." name="desc"
                                 id="desc" rows="3">{{ $type->desc }}</textarea>
                             @error('desc')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -63,7 +63,7 @@
                     </div>
                     <div class="col-md-12 text-center">
                         <div class="mb-3">
-                            <label class="form-label">{{ __('Gambar') }}</label><br>
+                            <label class="form-label">{{ __('Image') }}</label><br>
                             @if ($type->img == null)
                                 <img class="img-fluid rounded" width="200px" id="image-preview"
                                     src="{{ asset('assets/profile/default.png') }}" alt="{{ $type->name }}">

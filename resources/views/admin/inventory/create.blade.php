@@ -1,6 +1,6 @@
 <!-- Tombol untuk membuka modal -->
 <button role="button" class="btn btn-sm mx-1 btn-primary" data-toggle="modal" data-target="#modalFormCreate"><i
-        class="fas fa-plus"></i><span class="d-none d-sm-inline"> {{ __('Tambah') }}</span></button>
+        class="fas fa-plus"></i><span class="d-none d-sm-inline"> {{ __('Create') }}</span></button>
 
 <!-- Modal -->
 <div class="modal fade" id="modalFormCreate" tabindex="-1" role="dialog" aria-labelledby="modalFormLabel"
@@ -21,9 +21,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">{{ __('Nama') }}</label>
+                            <label class="form-label">{{ __('Name') }}</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                placeholder="Nama..." name="name" id="name" required>
+                                placeholder="Name..." name="name" id="name" required>
                             @error('name')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -31,10 +31,10 @@
                     </div>
                     <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">{{ __('Kategori') }}</label>
+                            <label class="form-label">{{ __('Category') }}</label>
                             <select class="form-select @error('type_id') is-invalid @enderror" name="type_id"
                                 id="type_id" required>
-                                <option selected disabled>{{ __('Pilih Kategori') }}</option>
+                                <option selected disabled>{{ __('Select Category') }}</option>
                                 @foreach ($types as $type)
                                     <option value="{{ $type->id }}">
                                         {{ $type->category->name }} ({{ $type->name }})</option>
@@ -47,8 +47,8 @@
                     </div>
                     <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">{{ __('Deskripsi') }}</label>
-                            <textarea class="form-control @error('desc') is-invalid @enderror" placeholder="Deskripsi..." name="desc"
+                            <label class="form-label">{{ __('Description') }}</label>
+                            <textarea class="form-control @error('desc') is-invalid @enderror" placeholder="Description..." name="desc"
                                 id="desc" rows="3"></textarea>
                             @error('desc')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -57,7 +57,7 @@
                     </div>
                     <div class="col-md-12 text-center">
                         <div class="mb-3">
-                            <label class="form-label">{{ __('Gambar') }}</label>
+                            <label class="form-label">{{ __('Image') }}</label>
                             <input id="image-input" accept="image/*" type="file"
                                 class="form-control @error('img') is-invalid @enderror" placeholder="img" name="img"
                                 id="img">

@@ -1,15 +1,15 @@
 @extends('layouts.client.app')
 
-@section('title', 'Hasil Pencarian')
+@section('title', 'Search Result')
 
-@section('textHome', 'primary-bg rounded')
+@section('textHome', 'primary-bg text-white rounded')
 
 @section('content')
 
     <div class="text-center py-5">
         <div class="container py-5">
             <div class="row">
-                <h4 class="text-left py-1 fw-bold">HASIL PENCARIAN</h4>
+                <h4 class="text-left py-1 fw-bold">SEARCH RESULT</h4>
                 @foreach ($products as $product)
                     <a href="{{ route('product.show', $product->id) }}" class="col-4 col-md-3 mb-3 product-card"
                         data-type-id="{{ $product->type_id }}">

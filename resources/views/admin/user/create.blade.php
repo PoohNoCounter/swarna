@@ -1,6 +1,6 @@
 <!-- Tombol untuk membuka modal -->
 <button role="button" class="btn btn-sm mx-1 btn-primary" data-toggle="modal" data-target="#modalFormCreate"><i
-        class="fas fa-plus"></i><span class="d-none d-sm-inline"> {{ __('Tambah') }}</span></button>
+        class="fas fa-plus"></i><span class="d-none d-sm-inline"> {{ __('Create') }}</span></button>
 
 <!-- Modal -->
 <div class="modal fade" id="modalFormCreate" tabindex="-1" role="dialog" aria-labelledby="modalFormLabel"
@@ -21,9 +21,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="mb-2">
-                            <label class="form-label">{{ __('Nama') }}</label>
+                            <label class="form-label">{{ __('Name') }}</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                placeholder="Nama..." name="name" id="name" required>
+                                placeholder="Name..." name="name" id="name" required>
                             @error('name')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="mb-2">
-                            <label class="form-label">{{ __('No HP') }}</label>
+                            <label class="form-label">{{ __('Phone') }}</label>
                             <input type="text" class="form-control @error('no_hp') is-invalid @enderror"
                                 placeholder="08123456789" name="no_hp" id="no_hp" required>
                             @error('no_hp')
@@ -41,10 +41,10 @@
                     </div>
                     <div class="col-md-12">
                         <div class="mb-2">
-                            <label class="form-label">{{ __('Alamat') }}</label>
-                            <input type="text" class="form-control @error('alamat') is-invalid @enderror"
-                                placeholder="Lampung..." name="alamat" id="alamat" required>
-                            @error('alamat')
+                            <label class="form-label">{{ __('location') }}</label>
+                            <input type="text" class="form-control @error('location') is-invalid @enderror"
+                                placeholder="Lampung..." name="location" id="location" required>
+                            @error('location')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
@@ -55,7 +55,7 @@
                         <div class="mb-3">
                             <label class="form-label">{{ __('Email') }}</label>
                             <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                placeholder="test@gmail.com" name="email" id="email" required>
+                                placeholder="name@gmail.com" name="email" id="email" required>
                             @error('email')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror

@@ -13,27 +13,27 @@
                 @endif
             </div>
             <img class="img img-fluid" width="200" src="{{ asset('assets/img/logo_full.png') }}" alt="">
-            <p class="text-center font-weight-bold">Selamat Datang di SWARNA</p>
+            <p class="text-center font-weight-bold">Welcome to SWARNA</p>
             <div class="d-flex justify-content-center align-items-center mt-3 mx-3">
                 <form action="{{ route('regist') }}" method="POST" class="">
                     @csrf
                     <input class="form-control @error('name') is-invalid @enderror" name="name" required autofocus
-                        type="text" name="name" id="name" placeholder="Nama...">
+                        type="text" name="name" id="name" placeholder="Name...">
                     @error('name')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                     <input class="form-control @error('no_hp') is-invalid @enderror" name="no_hp" required type="text"
-                        name="no_hp" id="no_hp" placeholder="no hp">
+                        name="no_hp" id="no_hp" placeholder="Phone">
                     @error('no_hp')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
-                    <input class="form-control @error('alamat') is-invalid @enderror" name="alamat" required type="text"
-                        name="alamat" id="alamat" placeholder="Lampung...">
-                    @error('alamat')
+                    <input class="form-control @error('location') is-invalid @enderror" name="location" required
+                        type="text" name="location" id="location" placeholder="Lampung...">
+                    @error('location')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                     <input class="form-control @error('email') is-invalid @enderror" name="email" required autofocus
-                        type="text" name="email" id="email" placeholder="test@gmail.com">
+                        type="text" name="email" id="email" placeholder="name@gmail.com">
                     @error('email')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -48,12 +48,12 @@
                     @error('password_confirmation')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
-                    <button type="submit" class="btn btn-block primary-bg mt-3">Daftar</button>
+                    <button type="submit" class="btn btn-block primary-bg mt-3">Register</button>
                 </form>
             </div>
             <div class="d-flex justify-content-center align-items-center">
-                <p class="text-center mt-3">Sudah punya akun? <a class="text-decoration-none primary-color"
-                        href="{{ route('login') }}">Masuk</a></p>
+                <p class="text-center mt-3">Already have an account? <a class="text-decoration-none primary-color"
+                        href="{{ route('login') }}">Login</a></p>
             </div>
         </div>
     </div>

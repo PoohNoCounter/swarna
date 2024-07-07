@@ -43,7 +43,7 @@ class AdminScheduleController extends Controller
             $img->move('../public/assets/img/', $file_name);
         }
 
-        return back()->with('alert', 'Berhasil Tambah Data schedule!');
+        return back()->with('alert', 'Success Create Data schedule!');
     }
 
     public function update(Request $request, $id)
@@ -74,7 +74,7 @@ class AdminScheduleController extends Controller
             $img->move('../public/assets/img/', $file_name);
         }
 
-        return back()->with('alert', 'Berhasil Edit Data schedule!');
+        return back()->with('alert', 'Success Edit Data schedule!');
     }
 
     public function destroy($id)
@@ -82,6 +82,6 @@ class AdminScheduleController extends Controller
         $schedule = Schedule::findOrFail($id);
         $schedule->delete();
 
-        return back()->with('alert', 'Berhasil Hapus Data schedule!');
+        return back()->with('alert', 'Success Delete Data schedule!');
     }
 }

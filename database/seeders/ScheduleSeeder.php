@@ -19,7 +19,7 @@ class ScheduleSeeder extends Seeder
         $schedules = [
             [
                 'id' => Str::uuid(),
-                'name' => 'Jadwal 1',
+                'name' => 'Schedule 1',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'datetime' => Carbon::now(),
@@ -29,7 +29,7 @@ class ScheduleSeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'name' => 'Jadwal 2',
+                'name' => 'Schedule 2',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'datetime' => Carbon::now(),
@@ -39,7 +39,7 @@ class ScheduleSeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'name' => 'Jadwal 3',
+                'name' => 'Schedule 3',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'datetime' => Carbon::now(),
@@ -49,7 +49,7 @@ class ScheduleSeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'name' => 'Jadwal 4',
+                'name' => 'Schedule 4',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'datetime' => Carbon::now(),

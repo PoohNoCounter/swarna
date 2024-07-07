@@ -2,7 +2,7 @@
 
     <!-- Title -->
     <x-slot name="title">
-        Kategori
+        {{ __('Category') }}
     </x-slot>
 
     <!-- Button Form Create -->
@@ -15,10 +15,10 @@
         <thead>
             <tr>
                 <th>{{ __('No') }}</th>
-                <th>{{ __('Nama') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Deskripsi') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Gambar') }}</th>
-                <th>{{ __('Aksi') }}</th>
+                <th>{{ __('Name') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Description') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Image') }}</th>
+                <th>{{ __('Action') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -60,7 +60,7 @@
                                                     <a href="{{ asset('assets/img/' . $category->img) }}"
                                                         download="{{ $category->img }}"
                                                         class="btn btn-success mt-2 col-12">Download
-                                                        Gambar</a>
+                                                        Image</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -81,10 +81,10 @@
         <tfoot>
             <tr>
                 <th>{{ __('No') }}</th>
-                <th>{{ __('Nama') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Deskripsi') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Gambar') }}</th>
-                <th>{{ __('Aksi') }}</th>
+                <th>{{ __('Name') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Description') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Image') }}</th>
+                <th>{{ __('Action') }}</th>
             </tr>
         </tfoot>
     </table>

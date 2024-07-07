@@ -19,7 +19,7 @@ class CategorySeeder extends Seeder
         $categories = [
             [
                 'id' => Str::uuid(),
-                'name' => 'Kategori 1',
+                'name' => 'Category 1',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -27,7 +27,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'name' => 'Kategori 2',
+                'name' => 'Category 2',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -35,7 +35,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'name' => 'Kategori 3',
+                'name' => 'Category 3',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -43,7 +43,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'name' => 'Kategori 4',
+                'name' => 'Category 4',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -51,7 +51,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'name' => 'Kategori 5',
+                'name' => 'Category 5',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -59,7 +59,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'name' => 'Kategori 6',
+                'name' => 'Category 6',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -67,7 +67,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'name' => 'Kategori 7',
+                'name' => 'Category 7',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -75,7 +75,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'name' => 'Kategori 8',
+                'name' => 'Category 8',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -83,7 +83,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'name' => 'Kategori 9',
+                'name' => 'Category 9',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -91,7 +91,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'name' => 'Kategori 10',
+                'name' => 'Category 10',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -99,7 +99,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'name' => 'Kategori 11',
+                'name' => 'Category 11',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -107,7 +107,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => Str::uuid(),
-                'name' => 'Kategori 12',
+                'name' => 'Category 12',
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),

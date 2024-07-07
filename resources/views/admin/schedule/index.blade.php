@@ -5,7 +5,7 @@ use Carbon\Carbon;
 
     <!-- Title -->
     <x-slot name="title">
-        Jadwal Event
+        {{ __('Schedule') }}
     </x-slot>
 
     <!-- Button Form Create -->
@@ -18,10 +18,10 @@ use Carbon\Carbon;
         <thead>
             <tr>
                 <th>{{ __('No') }}</th>
-                <th>{{ __('Nama') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Tanggal') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Deskripsi') }}</th>
-                <th>{{ __('Aksi') }}</th>
+                <th>{{ __('Name') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Date') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Description') }}</th>
+                <th>{{ __('Action') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -43,10 +43,10 @@ use Carbon\Carbon;
         <tfoot>
             <tr>
                 <th>{{ __('No') }}</th>
-                <th>{{ __('Nama') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Tanggal') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Deskripsi') }}</th>
-                <th>{{ __('Aksi') }}</th>
+                <th>{{ __('Name') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Date') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Description') }}</th>
+                <th>{{ __('Action') }}</th>
             </tr>
         </tfoot>
     </table>

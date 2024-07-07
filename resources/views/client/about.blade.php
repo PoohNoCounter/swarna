@@ -2,7 +2,7 @@
 
 @section('title', 'About')
 
-@section('textAbout', 'primary-bg rounded')
+@section('textAbout', 'primary-bg text-white rounded')
 
 @section('content')
 

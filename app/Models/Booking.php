@@ -13,7 +13,7 @@ class Booking extends Model
     protected $table = 'booking';
     protected $primaryKey = 'id';
     public $incrementing = false;
-    protected $fillable = ['id', 'token', 'product_id', 'user_id', 'location', 'rental_date', 'return_date', 'status', 'total', 'created_at', 'updated_at'];
+    protected $fillable = ['id', 'token', 'product_id', 'user_id', 'location', 'rental_date', 'return_date', 'status', 'quantity', 'total', 'created_at', 'updated_at'];
 
     public function Product()
     {

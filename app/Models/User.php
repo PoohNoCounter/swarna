@@ -26,7 +26,7 @@ class User extends Authenticatable
         'email',
         'img',
         'no_hp',
-        'alamat',
+        'location',
         'password',
         'role',
         'created_at',

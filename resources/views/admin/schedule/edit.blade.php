@@ -24,9 +24,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">{{ __('Nama') }}</label>
+                            <label class="form-label">{{ __('Name') }}</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                placeholder="Nama..." name="name" id="name" value="{{ $schedule->name }}"
+                                placeholder="Name..." name="name" id="name" value="{{ $schedule->name }}"
                                 required>
                             @error('name')
                                 <div class="invalid-feedback">{{ $message }}
@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">{{ __('Tanggal') }}</label>
+                            <label class="form-label">{{ __('Date') }}</label>
                             <input type="datetime-local" class="form-control @error('datetime') is-invalid @enderror"
                                 placeholder="datetime" name="datetime" id="datetime" value="{{ $schedule->datetime }}"
                                 required>
@@ -58,8 +58,8 @@
                     </div>
                     <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">{{ __('Deskripsi') }}</label>
-                            <textarea class="form-control @error('desc') is-invalid @enderror" placeholder="Deskripsi..." name="desc"
+                            <label class="form-label">{{ __('Description') }}</label>
+                            <textarea class="form-control @error('desc') is-invalid @enderror" placeholder="Description..." name="desc"
                                 id="desc" rows="3">{{ $schedule->desc }}</textarea>
                             @error('desc')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col-md-12 text-center">
                         <div class="mb-3">
-                            <label class="form-label">{{ __('Gambar') }}</label><br>
+                            <label class="form-label">{{ __('Image') }}</label><br>
                             @if ($schedule->img == null)
                                 <img class="img-fluid rounded" width="200px" id="image-preview"
                                     src="{{ asset('assets/profile/default.png') }}" alt="{{ $schedule->name }}">

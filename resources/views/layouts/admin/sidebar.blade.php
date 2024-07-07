@@ -13,12 +13,12 @@
             <nav class="">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
-                    <li class="nav-header">UTAMA</li>
+                    <li class="nav-header">MENU</li>
                     <li class="nav-item">
                         <a href="{{ route('admin.dashboard') }}" class="nav-link text-white @yield('activeDashboard')">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
-                                BERANDA
+                                DASHBOARD
                             </p>
                         </a>
                     </li>
@@ -26,7 +26,7 @@
                         <a href="{{ route('admin.user.index') }}" class="nav-link text-white @yield('activeUser')">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
-                                AKUN PENGGUNA
+                                USER ACCOUNT
                             </p>
                         </a>
                     </li>
@@ -34,7 +34,7 @@
                         <a href="{{ route('admin.product.index') }}" class="nav-link text-white @yield('activeProduct')">
                             <i class="nav-icon fas fa-list"></i>
                             <p>
-                                PRODUK
+                                PRODUCT
                             </p>
                         </a>
                     </li>
@@ -42,7 +42,7 @@
                         <a href="{{ route('admin.booking.index') }}" class="nav-link text-white @yield('activeBooking')">
                             <i class="nav-icon fas fa-shopping-cart"></i>
                             <p>
-                                PEMESANAN
+                                BOOKING
                             </p>
                         </a>
                     </li>
@@ -50,7 +50,7 @@
                         <a href="{{ route('admin.schedule.index') }}" class="nav-link text-white @yield('activeSchedule')">
                             <i class="nav-icon fas fa-calendar"></i>
                             <p>
-                                JADWAL EVENT
+                                EVENT SCHEDULE
                             </p>
                         </a>
                     </li>
@@ -58,7 +58,7 @@
                         <a href="{{ route('admin.category.index') }}" class="nav-link text-white @yield('activeCategory')">
                             <i class="nav-icon fas fa-tag"></i>
                             <p>
-                                KATEGORI
+                                CATEGORY
                             </p>
                         </a>
                     </li>
@@ -66,7 +66,7 @@
                         <a href="{{ route('admin.type.index') }}" class="nav-link text-white @yield('activeType')">
                             <i class="nav-icon fas fa-tags"></i>
                             <p>
-                                TIPE
+                                TYPE
                             </p>
                         </a>
                     </li>
@@ -74,11 +74,11 @@
                         <a href="{{ route('admin.inventory.index') }}" class="nav-link text-white @yield('activeInventory')">
                             <i class="nav-icon fas fa-warehouse"></i>
                             <p>
-                                INVENTARIS
+                                INVENTORY
                             </p>
                         </a>
                     </li>
-                    <li class="nav-header mt-3">KELUAR</li>
+                    <li class="nav-header mt-3">LOGOUT</li>
                     <li class="nav-item">
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>
                             @csrf

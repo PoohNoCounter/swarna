@@ -13,7 +13,7 @@ class Product extends Model
     protected $table = 'product';
     protected $primaryKey = 'id';
     public $incrementing = false;
-    protected $fillable = ['id', 'name', 'type_id', 'desc', 'img', 'price', 'created_at', 'updated_at'];
+    protected $fillable = ['id', 'name', 'type_id', 'desc', 'img', 'quantity', 'price', 'created_at', 'updated_at'];
 
     public function type()
     {

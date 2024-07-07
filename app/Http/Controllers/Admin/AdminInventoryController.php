@@ -43,7 +43,7 @@ class AdminInventoryController extends Controller
             $img->move('../public/assets/img/', $file_name);
         }
 
-        return back()->with('alert', 'Berhasil Tambah Data Inventory!');
+        return back()->with('alert', 'Success Create Data Inventory!');
     }
 
     public function update(Request $request, $id)
@@ -72,7 +72,7 @@ class AdminInventoryController extends Controller
             $img->move('../public/assets/img/', $file_name);
         }
 
-        return back()->with('alert', 'Berhasil Edit Data Inventory!');
+        return back()->with('alert', 'Success Edit Data Inventory!');
     }
 
     public function destroy($id)
@@ -80,6 +80,6 @@ class AdminInventoryController extends Controller
         $inventory = Inventory::findOrFail($id);
         $inventory->delete();
 
-        return back()->with('alert', 'Berhasil Hapus Data Inventory!');
+        return back()->with('alert', 'Success Delete Data Inventory!');
     }
 }

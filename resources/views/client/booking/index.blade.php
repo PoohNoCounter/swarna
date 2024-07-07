@@ -2,7 +2,7 @@
 
 @section('title', 'Booking')
 
-@section('textBooking', 'primary-bg rounded')
+@section('textBooking', 'primary-bg text-white rounded')
 
 @section('content')
 
@@ -14,19 +14,19 @@
                         <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="masuk-tab" data-toggle="pill" href="#masuk" role="tab"
-                                    aria-controls="masuk" aria-selected="true">Belum Bayar</a>
+                                    aria-controls="masuk" aria-selected="true">Not Yet Paid</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="ongoing-tab" data-toggle="pill" href="#ongoing" role="tab"
                                     aria-controls="ongoing" aria-selected="false">Ongoing</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="selesai-tab" data-toggle="pill" href="#selesai" role="tab"
-                                    aria-controls="selesai" aria-selected="false">Selesai</a>
+                                <a class="nav-link" id="Done-tab" data-toggle="pill" href="#Done" role="tab"
+                                    aria-controls="Done" aria-selected="false">Done</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="batal-tab" data-toggle="pill" href="#batal" role="tab"
-                                    aria-controls="batal" aria-selected="false">Dibatalkan</a>
+                                    aria-controls="batal" aria-selected="false">Cancel</a>
                             </li>
                         </ul>
                     </div>
@@ -34,7 +34,7 @@
                         <div class="tab-content" id="custom-tabs-three-tabContent">
                             <div class="tab-pane fade active show" id="masuk" role="tabpanel"
                                 aria-labelledby="masuk-tab">
-                                @foreach ($bookings->where('status', 'Menunggu Konfirmasi') as $booking)
+                                @foreach ($bookings->where('status', 'Waiting') as $booking)
                                     @if ($booking->User->id == auth()->user()->id)
                                         <a href="{{ route('booking.show', $booking->id) }}"
                                             class="card card-warning card-outline py-3 px-4">
@@ -54,20 +54,20 @@
                                                 <div class="col-md-5 mb-3">
                                                     <h3>{{ $booking->Product->name }}</h3>
                                                     <p>Qty : {{ $booking->quantity }}</p>
-                                                    <div>No. Pesanan</div>
-                                                    <div>Waktu Pemesanan</div>
+                                                    <div>No. Booking</div>
+                                                    <div>Booking Time</div>
                                                 </div>
                                                 <div class="col-md-6 mb-3 text-right">
                                                     <p>Rp{{ number_format($booking->Product->price ?? 0, 0, ',', '.') }}</p>
-                                                    <h3>Total Pesanan :
+                                                    <h3 class="fw-bold">Total :
                                                         Rp{{ number_format($booking->total ?? 0, 0, ',', '.') }}
                                                     </h3>
                                                     <div>{{ $booking->token ?? '-' }}</div>
                                                     <div>
-                                                        {{ date('d F Y', strtotime($booking->created_at)) }}
+                                                        {{ date('d F Y', strtotime($booking->rental_date)) }}
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6 pt-3 border-top">Klik untuk melihat detail Pemesanan
+                                                <div class="col-md-6 pt-3 border-top">Click to view Order details
                                                 </div>
                                                 <div class="col-md-6 pt-3 border-top text-right"><span
                                                         class="badge badge-warning">{{ $booking->status ?? '-' }}</span>
@@ -78,7 +78,7 @@
                                 @endforeach
                             </div>
                             <div class="tab-pane fade" id="ongoing" role="tabpanel" aria-labelledby="ongoing-tab">
-                                @foreach ($bookings->where('status', 'Diproses') as $booking)
+                                @foreach ($bookings->where('status', 'Ongoing') as $booking)
                                     @if ($booking->User->id == auth()->user()->id)
                                         <a href="{{ route('booking.show', $booking->id) }}"
                                             class="card card-primary card-outline py-3 px-4">
@@ -98,21 +98,21 @@
                                                 <div class="col-md-5 mb-3">
                                                     <h3>{{ $booking->Product->name }}</h3>
                                                     <p>Qty : {{ $booking->quantity }}</p>
-                                                    <div>No. Pesanan</div>
-                                                    <div>Waktu Pemesanan</div>
+                                                    <div>No. Booking</div>
+                                                    <div>Booking Time</div>
                                                 </div>
                                                 <div class="col-md-6 mb-3 text-right">
                                                     <p>Rp{{ number_format($booking->Product->price ?? 0, 0, ',', '.') }}
                                                     </p>
-                                                    <h3>Total Pesanan :
+                                                    <h3 class="fw-bold">Total :
                                                         Rp{{ number_format($booking->total ?? 0, 0, ',', '.') }}
                                                     </h3>
                                                     <div>{{ $booking->token ?? '-' }}</div>
                                                     <div>
-                                                        {{ date('d F Y', strtotime($booking->created_at)) }}
+                                                        {{ date('d F Y', strtotime($booking->rental_date)) }}
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6 pt-3 border-top">Klik untuk melihat detail Pemesanan
+                                                <div class="col-md-6 pt-3 border-top">Click to view Order details
                                                 </div>
                                                 <div class="col-md-6 pt-3 border-top text-right"><span
                                                         class="badge badge-primary">{{ $booking->status ?? '-' }}</span>
@@ -122,8 +122,8 @@
                                     @endif
                                 @endforeach
                             </div>
-                            <div class="tab-pane fade" id="selesai" role="tabpanel" aria-labelledby="selesai-tab">
-                                @foreach ($bookings->where('status', 'Selesai') as $booking)
+                            <div class="tab-pane fade" id="Done" role="tabpanel" aria-labelledby="Done-tab">
+                                @foreach ($bookings->where('status', 'Done') as $booking)
                                     @if ($booking->User->id == auth()->user()->id)
                                         <a href="{{ route('booking.show', $booking->id) }}"
                                             class="card card-success card-outline py-3 px-4">
@@ -143,21 +143,21 @@
                                                 <div class="col-md-5 mb-3">
                                                     <h3>{{ $booking->Product->name }}</h3>
                                                     <p>Qty : {{ $booking->quantity }}</p>
-                                                    <div>No. Pesanan</div>
-                                                    <div>Waktu Pemesanan</div>
+                                                    <div>No. Booking</div>
+                                                    <div>Booking Time</div>
                                                 </div>
                                                 <div class="col-md-6 mb-3 text-right">
                                                     <p>Rp{{ number_format($booking->Product->price ?? 0, 0, ',', '.') }}
                                                     </p>
-                                                    <h3>Total Pesanan :
+                                                    <h3 class="fw-bold">Total :
                                                         Rp{{ number_format($booking->total ?? 0, 0, ',', '.') }}
                                                     </h3>
                                                     <div>{{ $booking->token ?? '-' }}</div>
                                                     <div>
-                                                        {{ date('d F Y', strtotime($booking->created_at)) }}
+                                                        {{ date('d F Y', strtotime($booking->rental_date)) }}
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6 pt-3 border-top">Klik untuk melihat detail Pemesanan
+                                                <div class="col-md-6 pt-3 border-top">Click to view Order details
                                                 </div>
                                                 <div class="col-md-6 pt-3 border-top text-right"><span
                                                         class="badge badge-success">{{ $booking->status ?? '-' }}</span>
@@ -168,7 +168,7 @@
                                 @endforeach
                             </div>
                             <div class="tab-pane fade" id="batal" role="tabpanel" aria-labelledby="batal-tab">
-                                @foreach ($bookings->where('status', 'Dibatalkan') as $booking)
+                                @foreach ($bookings->where('status', 'Cancel') as $booking)
                                     @if ($booking->User->id == auth()->user()->id)
                                         <a href="{{ route('booking.show', $booking->id) }}"
                                             class="card card-danger card-outline py-3 px-4">
@@ -188,21 +188,21 @@
                                                 <div class="col-md-5 mb-3">
                                                     <h3>{{ $booking->Product->name }}</h3>
                                                     <p>Qty : {{ $booking->quantity }}</p>
-                                                    <div>No. Pesanan</div>
-                                                    <div>Waktu Pemesanan</div>
+                                                    <div>No. Booking</div>
+                                                    <div>Booking Time</div>
                                                 </div>
                                                 <div class="col-md-6 mb-3 text-right">
                                                     <p>Rp{{ number_format($booking->Product->price ?? 0, 0, ',', '.') }}
                                                     </p>
-                                                    <h3>Total Pesanan :
+                                                    <h3 class="fw-bold">Total :
                                                         Rp{{ number_format($booking->total ?? 0, 0, ',', '.') }}
                                                     </h3>
                                                     <div>{{ $booking->token ?? '-' }}</div>
                                                     <div>
-                                                        {{ date('d F Y', strtotime($booking->created_at)) }}
+                                                        {{ date('d F Y', strtotime($booking->rental_date)) }}
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6 pt-3 border-top">Klik untuk melihat detail Pemesanan
+                                                <div class="col-md-6 pt-3 border-top">Click to view Order details
                                                 </div>
                                                 <div class="col-md-6 pt-3 border-top text-right"><span
                                                         class="badge badge-danger">{{ $booking->status ?? '-' }}</span>

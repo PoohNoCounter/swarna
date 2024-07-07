@@ -15,12 +15,12 @@
         <thead>
             <tr>
                 <th>{{ __('No') }}</th>
-                <th>{{ __('Kategori') }}</th>
-                <th>{{ __('Nama') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Deskripsi') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Gambar') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Tanggal') }}</th>
-                <th>{{ __('Aksi') }}</th>
+                <th>{{ __('Category') }}</th>
+                <th>{{ __('Name') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Description') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Image') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Date') }}</th>
+                <th>{{ __('Action') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -63,7 +63,7 @@
                                                     <a href="{{ asset('assets/img/' . $inventory->img) }}"
                                                         download="{{ $inventory->img }}"
                                                         class="btn btn-success mt-2 col-12">Download
-                                                        Gambar</a>
+                                                        Image</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -86,12 +86,12 @@
         <tfoot>
             <tr>
                 <th>{{ __('No') }}</th>
-                <th>{{ __('Kategori') }}</th>
-                <th>{{ __('Nama') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Deskripsi') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Gambar') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Tanggal') }}</th>
-                <th>{{ __('Aksi') }}</th>
+                <th>{{ __('Category') }}</th>
+                <th>{{ __('Name') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Description') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Image') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Date') }}</th>
+                <th>{{ __('Action') }}</th>
             </tr>
         </tfoot>
     </table>

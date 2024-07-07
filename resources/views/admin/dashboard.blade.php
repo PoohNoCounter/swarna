@@ -13,9 +13,9 @@
                 <div class="inner">
                     <h3>{{ $users }}</h3>
 
-                    <p>{{ __('Akun Pengguna') }}</p>
+                    <p>{{ __('User Account') }}</p>
                 </div>
-                <a href="{{ route('admin.user.index') }}" class="small-box-footer">Kelola Data <i
+                <a href="{{ route('admin.user.index') }}" class="small-box-footer">Manage Data <i
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
@@ -26,9 +26,9 @@
                 <div class="inner">
                     <h3>{{ $categories }}</h3>
 
-                    <p>{{ __('Kategori') }}</p>
+                    <p>{{ __('Category') }}</p>
                 </div>
-                <a href="{{ route('admin.category.index') }}" class="small-box-footer">Kelola Data <i
+                <a href="{{ route('admin.category.index') }}" class="small-box-footer">Manage Data <i
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
@@ -39,9 +39,9 @@
                 <div class="inner">
                     <h3>{{ $types }}</h3>
 
-                    <p>{{ __('Tipe') }}</p>
+                    <p>{{ __('Type') }}</p>
                 </div>
-                <a href="{{ route('admin.type.index') }}" class="small-box-footer">Kelola Data <i
+                <a href="{{ route('admin.type.index') }}" class="small-box-footer">Manage Data <i
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
@@ -52,9 +52,9 @@
                 <div class="inner">
                     <h3>{{ $inventories }}</h3>
 
-                    <p>{{ __('Inventaris') }}</p>
+                    <p>{{ __('Inventory') }}</p>
                 </div>
-                <a href="{{ route('admin.inventory.index') }}" class="small-box-footer">Kelola Data <i
+                <a href="{{ route('admin.inventory.index') }}" class="small-box-footer">Manage Data <i
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
@@ -65,9 +65,9 @@
                 <div class="inner">
                     <h3>{{ $schedules }}</h3>
 
-                    <p>{{ __('Jadwal Event') }}</p>
+                    <p>{{ __('Event Schedule') }}</p>
                 </div>
-                <a href="{{ route('admin.schedule.index') }}" class="small-box-footer">Kelola Data <i
+                <a href="{{ route('admin.schedule.index') }}" class="small-box-footer">Manage Data <i
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
@@ -78,9 +78,9 @@
                 <div class="inner">
                     <h3>{{ $bookings }}</h3>
 
-                    <p>{{ __('Pemesanan') }}</p>
+                    <p>{{ __('Booking') }}</p>
                 </div>
-                <a href="{{ route('admin.booking.index') }}" class="small-box-footer">Kelola Data <i
+                <a href="{{ route('admin.booking.index') }}" class="small-box-footer">Manage Data <i
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
@@ -91,9 +91,9 @@
                 <div class="inner">
                     <h3>{{ $products }}</h3>
 
-                    <p>{{ __('Produk') }}</p>
+                    <p>{{ __('Product') }}</p>
                 </div>
-                <a href="{{ route('admin.product.index') }}" class="small-box-footer">Kelola Data <i
+                <a href="{{ route('admin.product.index') }}" class="small-box-footer">Manage Data <i
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>

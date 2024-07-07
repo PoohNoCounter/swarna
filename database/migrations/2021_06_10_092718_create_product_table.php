@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('type_id')->nullable();
             $table->text('desc')->nullable();
             $table->string('img')->nullable();
+            $table->integer('quantity')->nullable();
             $table->integer('price')->nullable();
             $table->timestamps();
         });

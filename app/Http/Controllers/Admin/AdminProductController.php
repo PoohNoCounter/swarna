@@ -23,6 +23,7 @@ class AdminProductController extends Controller
             'name' => 'required|max:255',
             'type_id' => 'required',
             'desc' => 'max:255',
+            'quantity' => 'required|numeric',
             'price' => 'required',
             'img' => 'mimes:jpg,jpeg,png|max:2048',
         ]);
@@ -32,6 +33,7 @@ class AdminProductController extends Controller
             'name' => $request->name,
             'type_id' => $request->type_id,
             'desc' => $request->desc,
+            'quantity' => $request->quantity,
             'price' => $request->price,
             'created_at' => now(),
             'updated_at' => now(),
@@ -45,7 +47,7 @@ class AdminProductController extends Controller
             $img->move('../public/assets/img/', $file_name);
         }
 
-        return back()->with('alert', 'Berhasil Tambah Data product!');
+        return back()->with('alert', 'Success Create Data product!');
     }
 
     public function update(Request $request, $id)
@@ -56,6 +58,7 @@ class AdminProductController extends Controller
             'name' => 'required|max:255',
             'type_id' => 'required',
             'desc' => 'max:255',
+            'quantity' => 'required|numeric',
             'price' => 'required',
             'img' => 'mimes:jpg,jpeg,png|max:2048',
         ]);
@@ -64,6 +67,7 @@ class AdminProductController extends Controller
             'name' => $request->name,
             'type_id' => $request->type_id,
             'desc' => $request->desc,
+            'quantity' => $request->quantity,
             'price' => $request->price,
             'updated_at' => now(),
         ]);
@@ -76,7 +80,7 @@ class AdminProductController extends Controller
             $img->move('../public/assets/img/', $file_name);
         }
 
-        return back()->with('alert', 'Berhasil Edit Data product!');
+        return back()->with('alert', 'Success Edit Data product!');
     }
 
     public function destroy($id)
@@ -84,6 +88,6 @@ class AdminProductController extends Controller
         $product = Product::findOrFail($id);
         $product->delete();
 
-        return back()->with('alert', 'Berhasil Hapus Data product!');
+        return back()->with('alert', 'Success Delete Data product!');
     }
 }

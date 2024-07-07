@@ -2,7 +2,7 @@
 
 @section('title', 'Detail Booking')
 
-@section('textBooking', 'primary-bg rounded')
+@section('textBooking', 'primary-bg text-white rounded')
 
 @section('content')
 
@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="row m-0 p-3">
                         <div class="border-bottom">
-                            <p class="font-weight-bold">Alamat Pengiriman</p>
+                            <p class="font-weight-bold">Sent Address</p>
                             <p class="m-0">{{ $booking->User->name }} | <a
                                     href="https://wa.me/+62{{ $booking->User->no_hp }}" class="text-success"><i
                                         class="fa fa-whatsapp"></i> {{ $booking->User->no_hp }}</a></p>
@@ -21,8 +21,8 @@
                         </div>
                         <div class="row m-0 pt-3">
                             <div class="col-md-6">
-                                <p class="m-0">No. Pesanan</p>
-                                <p class="m-0">Waktu Pemesanan</p>
+                                <p class="m-0">No. Booking</p>
+                                <p class="m-0">Booking Time</p>
                             </div>
                             <div class="col-md-6 text-right">
                                 <p class="m-0">{{ $booking->token }}</p>

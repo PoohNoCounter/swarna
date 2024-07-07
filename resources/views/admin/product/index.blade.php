@@ -2,7 +2,7 @@
 
     <!-- Title -->
     <x-slot name="title">
-        Produk
+        {{ __('Product') }}
     </x-slot>
 
     <!-- Button Form Create -->
@@ -15,13 +15,14 @@
         <thead>
             <tr>
                 <th>{{ __('No') }}</th>
-                <th>{{ __('Kategori') }}</th>
-                <th>{{ __('Nama') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Deskripsi') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Harga') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Gambar') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Tanggal') }}</th>
-                <th>{{ __('Aksi') }}</th>
+                <th>{{ __('Category') }}</th>
+                <th>{{ __('Name') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Description') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Quantity') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Price') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Image') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Date') }}</th>
+                <th>{{ __('Action') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +32,7 @@
                     <td>{{ $product->type->category->name ?? '-' }} ({{ $product->type->name ?? '-' }})</td>
                     <td>{{ $product->name ?? '-' }}</td>
                     <td class="d-none d-lg-table-cell">{{ $product->desc ?? '-' }}</td>
+                    <td class="d-none d-lg-table-cell">{{ $product->quantity ?? '0' }}</td>
                     <td class="d-none d-lg-table-cell">{{ $product->price ?? '-' }}</td>
                     <td class="d-none d-lg-table-cell">
                         @if ($product->img == null)
@@ -65,7 +67,7 @@
                                                     <a href="{{ asset('assets/img/' . $product->img) }}"
                                                         download="{{ $product->img }}"
                                                         class="btn btn-success mt-2 col-12">Download
-                                                        Gambar</a>
+                                                        Image</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -87,13 +89,14 @@
         <tfoot>
             <tr>
                 <th>{{ __('No') }}</th>
-                <th>{{ __('Kategori') }}</th>
-                <th>{{ __('Nama') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Deskripsi') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Harga') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Gambar') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Tanggal') }}</th>
-                <th>{{ __('Aksi') }}</th>
+                <th>{{ __('Category') }}</th>
+                <th>{{ __('Name') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Description') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Quantity') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Price') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Image') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Date') }}</th>
+                <th>{{ __('Action') }}</th>
             </tr>
         </tfoot>
     </table>

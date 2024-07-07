@@ -21,12 +21,14 @@
                     <a href="#" class="fa fa-instagram"></a>
                 </p>
                 <div class="mb-3">
-                    <div class="fw-bold">TENTANG KAMI</div>
-                    <div class="fw-bold">KEBIJAKAN PRIVASI</div>
-                    <div class="fw-bold">SYARAT & KETENTUAN</div>
+                    <div class="fw-bold">ABOUT US</div>
+                    <div class="fw-bold">PRIVACY POLICY</div>
+                    <div class="fw-bold">TERMS & CONDITIONS</div>
                 </div>
-                <div><i class="fa fa-phone pe-2"></i> 026-5264-4190</div>
-                <div>Jl. Raya Kalipucang No.232, Kalipucang, Kec. Kalipucang, Kab. Pangandaran, Jawa Barat 46397</div>
+                <a class="text-white" href="https://wa.me/+6281286388882"><i class="fa fa-phone pe-2"></i>
+                    0812-8638-8882</a>
+                <div>Jl. Urip Sumoharjo Jl. Perwira 1 No.21, Sukarame, Kec. Sukarame, Kota Bandar Lampung, Lampung 31515
+                </div>
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
 
     <!-- Title -->
     <x-slot name="title">
-        Pengguna
+        {{ __('User Account') }}
     </x-slot>
 
     <!-- Button Form Create -->
@@ -15,12 +15,12 @@
         <thead>
             <tr>
                 <th>{{ __('No') }}</th>
-                <th>{{ __('Nama') }}</th>
+                <th>{{ __('Name') }}</th>
                 <th class="d-none d-lg-table-cell">{{ __('Email') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('No HP') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Alamat') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Phone') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Address') }}</th>
                 <th class="d-none d-lg-table-cell">{{ __('Role') }}</th>
-                <th>{{ __('Aksi') }}</th>
+                <th>{{ __('Action') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -30,7 +30,7 @@
                     <td>{{ $user->name ?? '-' }}</td>
                     <td class="d-none d-lg-table-cell">{{ $user->email ?? '-' }}</td>
                     <td class="d-none d-lg-table-cell">{{ $user->no_hp ?? '-' }}</td>
-                    <td class="d-none d-lg-table-cell">{{ $user->alamat ?? '-' }}</td>
+                    <td class="d-none d-lg-table-cell">{{ $user->location ?? '-' }}</td>
                     <td class="d-none d-lg-table-cell">{{ $user->role ?? '-' }}</td>
                     <td class="manage-row">
                         @if (auth()->user()->role == 'admin')
@@ -46,12 +46,12 @@
         <tfoot>
             <tr>
                 <th>{{ __('No') }}</th>
-                <th>{{ __('Nama') }}</th>
+                <th>{{ __('Name') }}</th>
                 <th class="d-none d-lg-table-cell">{{ __('Email') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('No HP') }}</th>
-                <th class="d-none d-lg-table-cell">{{ __('Alamat') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Phone') }}</th>
+                <th class="d-none d-lg-table-cell">{{ __('Address') }}</th>
                 <th class="d-none d-lg-table-cell">{{ __('Role') }}</th>
-                <th>{{ __('Aksi') }}</th>
+                <th>{{ __('Action') }}</th>
             </tr>
         </tfoot>
     </table>

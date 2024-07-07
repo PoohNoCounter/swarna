@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable();
             $table->foreignId('product_id')->nullable();
             $table->text('location')->nullable();
-            $table->string('status')->nullable()->default('Menunggu Konfirmasi');
+            $table->string('status')->nullable()->default('Waiting');
             $table->dateTime('rental_date')->nullable();
             $table->dateTime('return_date')->nullable();
             $table->integer('quantity')->nullable()->default(0);

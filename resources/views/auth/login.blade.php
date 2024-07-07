@@ -13,12 +13,12 @@
                 @endif
             </div>
             <img class="img img-fluid" width="200" src="{{ asset('assets/img/logo_full.png') }}" alt="">
-            <p class="text-center font-weight-bold">Selamat Datang di SWARNA</p>
+            <p class="text-center font-weight-bold">Welcome to SWARNA</p>
             <div class="mt-3 mx-3">
                 <form action="{{ route('login') }}" method="POST" class="">
                     @csrf
                     <input class="form-control @error('email') is-invalid @enderror" name="email" required autofocus
-                        type="text" name="email" id="email" placeholder="test@gmail.com">
+                        type="text" name="email" id="email" placeholder="name@gmail.com">
                     @error('email')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -27,12 +27,12 @@
                     @error('password')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
-                    <button type="submit" class="btn btn-block aktif mt-3 primary-bg">Masuk</button>
+                    <button type="submit" class="btn btn-block aktif mt-3 primary-bg">Login</button>
                 </form>
             </div>
             <div class="">
-                <p class="text-center mt-3">Belum punya akun? <a class="text-decoration-none primary-color"
-                        href="{{ route('register') }}">Daftar</a></p>
+                <p class="text-center mt-3">Don't have an account? <a class="text-decoration-none primary-color"
+                        href="{{ route('register') }}">Register</a></p>
             </div>
         </div>
     </div>

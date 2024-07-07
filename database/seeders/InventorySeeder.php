@@ -21,7 +21,7 @@ class InventorySeeder extends Seeder
             [
                 'id' => Str::uuid(),
                 'name' => 'Barang 1',
-                'type_id' => $this->type('Tipe 1.1'),
+                'type_id' => $this->type('Type 1.1'),
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),
@@ -30,7 +30,7 @@ class InventorySeeder extends Seeder
             [
                 'id' => Str::uuid(),
                 'name' => 'Barang 2',
-                'type_id' => $this->type('Tipe 2.1'),
+                'type_id' => $this->type('Type 2.1'),
                 'desc' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
                 'img' => "logo.png",
                 'created_at' => Carbon::now(),

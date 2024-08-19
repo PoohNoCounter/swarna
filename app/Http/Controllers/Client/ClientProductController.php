@@ -13,7 +13,7 @@ class ClientProductController extends Controller
 {
     public function index()
     {
-        $products = Product::paginate(10);
+        $products = Product::paginate(12);
         return view('client.product.index', compact('products'));
     }
 
@@ -35,17 +35,30 @@ class ClientProductController extends Controller
 
         $product = Product::findOrFail($request->product_id);
 
+        $rentalDate = Carbon::parse($request->rental_date);
+        $returnDate = Carbon::parse($request->return_date);
+        $quantity = $request->quantity;
+
+        if ($rentalDate->isSameDay($returnDate)) {
+            $total = $product->price * $quantity;
+        } else {
+            $days = $rentalDate->diffInDays($returnDate);
+            $total = $product->price * $quantity * $days;
+        }
+
         $booking = Booking::create([
             'id' => Str::uuid(),
             'token' => bin2hex(random_bytes(8)),
             'product_id' => $product->id,
             'user_id' => auth()->user()->id,
             'location' => auth()->user()->location,
-            'quantity' => $request->quantity,
+            'quantity' => $quantity,
             'status' => 'Cart',
-            'rental_date' => $request->rental_date,
-            'return_date' => $request->return_date,
-            'total' => $product->price * $request->quantity * Carbon::parse($request->rental_date)->diffInDays(Carbon::parse($request->return_date)),
+            'rental_date' => $rentalDate,
+            'return_date' => $returnDate,
+            'command' => 'send:booking-notifications',
+            'command_return' => 'send:deadline-notifications',
+            'total' => $total,
         ]);
 
         // dd($booking);

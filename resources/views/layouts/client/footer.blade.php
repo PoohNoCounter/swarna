@@ -7,11 +7,10 @@
             <div class="col-md-8">
                 <img class="img-fluid bg-white rounded-circle p-1 mb-2" width="50"
                     src="{{ asset('assets/img/logo.png') }}" alt="Logo">
-                <p class="text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores reprehenderit
-                    doloremque eaque incidunt. Maxime adipisci laudantium architecto odio dicta perferendis ipsum
-                    dolores suscipit animi natus, amet quas fugit officiis aut earum quo, sit labore nam. Quo nisi sequi
-                    placeat aspernatur, voluptatibus labore facere atque quis ea hic, delectus magni necessitatibus ipsa
-                    maiores vel? Repudiandae nulla est dolor praesentium aliquam magni.</p>
+                <p class="text-justify">Swarna Creative Multimedia <br>
+                    Light Up Your Visual <br>
+                    Vendor Multimedia <br>
+                    Since 2016</p>
                 <div>Copyright &copy; 2024 || SWARNA</div>
             </div>
             <div class="col-md-4 text-right">

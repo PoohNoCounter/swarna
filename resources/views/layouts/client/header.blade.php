@@ -1,7 +1,3 @@
-<?php
-use Illuminate\Support\Facades\Auth;
-?>
-
 <header class="header px-3 mb-3 fixed-top border-bottom">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light py-0">
@@ -44,13 +40,17 @@ use Illuminate\Support\Facades\Auth;
                         </a>
                     </li>
                     @if (Auth::check())
-                        <li class="nav-item dropdown pt-2">
+                        <li class="nav-item dropdown pt-2 @yield('textProfile')">
                             <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
                                 id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
                                 style="color: black">
-                                {{ Auth::user()->name }} <i class="fas fa-user-circle ms-2 fa-2x"></i>
+                                {{ Str::limit(auth()->user()->name, 15) }} <i
+                                    class="fas fa-user-circle ms-2 fa-2x"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a href="{{ route('profile.edit') }}" class="dropdown-item">Profile</a>
+                                </li>
                                 <li>
                                     <form action="{{ route('logout') }}" method="POST">
                                         @csrf

@@ -29,7 +29,7 @@ class BookingSeeder extends Seeder
                 'total' => 50000,
                 'quantity' => 20,
                 'rental_date' => Carbon::now(),
-                'return_date' => Carbon::now(),
+                'return_date' => Carbon::now()->addDays(1),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],

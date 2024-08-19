@@ -28,9 +28,9 @@ use Carbon\Carbon;
             @foreach ($categories as $schedule)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $schedule->name ?? '-' }}</td>
+                    <td>{{ Str::limit($schedule->name ?? '-', 12) }}</td>
                     <td>{{ Carbon::parse($schedule->datetime)->translatedFormat('l, d F Y') }}</td>
-                    <td class="d-none d-lg-table-cell">{{ $schedule->desc ?? '-' }}</td>
+                    <td class="d-none d-lg-table-cell">{{ Str::limit($schedule->desc, 30) ?? '-' }}</td>
                     <td class="manage-row">
                         @if (auth()->user()->role == 'admin')
                             @include('admin.schedule.edit')

@@ -9,7 +9,7 @@ class ClientScheduleController extends Controller
 {
     public function index()
     {
-        $schedules = Schedule::paginate(10);
+        $schedules = Schedule::paginate(12);
         return view('client.schedule.index', compact('schedules'));
     }
 

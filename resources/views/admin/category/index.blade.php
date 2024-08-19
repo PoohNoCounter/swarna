@@ -25,12 +25,12 @@
             @foreach ($categories as $category)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $category->name ?? '-' }}</td>
-                    <td class="d-none d-lg-table-cell">{{ $category->desc ?? '-' }}</td>
+                    <td>{{ Str::limit($category->name ?? '-', 12) }}</td>
+                    <td class="d-none d-lg-table-cell">{{ Str::limit($category->desc, 30) ?? '-' }}</td>
                     <td class="d-none d-lg-table-cell">
                         @if ($category->img == null)
-                            <img src="{{ asset('assets/profile/default.png') }}" alt="{{ $category->name }}"
-                                width="100">
+                            <img src="{{ asset('assets/profile/default.png') }}"
+                                alt="{{ Str::limit($category->name ?? '-', 12) }}" width="100">
                         @else
                             <a href="#" data-toggle="modal" data-target="#myModal{{ $category->id }}">
                                 <img class="img img-fluid rounded" src="{{ asset('assets/img/' . $category->img) }}"
@@ -45,7 +45,8 @@
                                         <div class="modal-body">
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <h3 class="card-title">{{ $category->name }}</h3>
+                                                    <h3 class="card-title">{{ Str::limit($category->name ?? '-', 12) }}
+                                                    </h3>
                                                     <div class="card-tools">
                                                         <button type="button" class="btn btn-tool"
                                                             data-card-widget="maximize"><i

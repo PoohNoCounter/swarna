@@ -13,8 +13,8 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $products = Product::paginate(10);
-        $schedules = Schedule::paginate(10);
+        $products = Product::paginate(12);
+        $schedules = Schedule::paginate(12);
 
         return view('client.index', compact('categories', 'products', 'schedules'));
     }
@@ -28,11 +28,6 @@ class HomeController extends Controller
         })->get();
 
         return view('client.show', compact('category', 'products', 'types'));
-    }
-
-    public function about()
-    {
-        return view('client.about');
     }
 
     public function search(Request $request)

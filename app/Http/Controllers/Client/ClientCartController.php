@@ -16,6 +16,12 @@ class ClientCartController extends Controller
         return view('client.cart.index', compact('bookings'));
     }
 
+    public function show(Request $request, $id)
+    {
+        $booking = Booking::findOrFail($id);
+        return view('client.cart.show', compact('booking'));
+    }
+
     public function update(Request $request, $id)
     {
         $booking = Booking::findOrFail($id);

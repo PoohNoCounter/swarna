@@ -22,7 +22,7 @@ class AdminProductController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'type_id' => 'required',
-            'desc' => 'max:255',
+            'desc' => 'max:500',
             'quantity' => 'required|numeric',
             'price' => 'required',
             'img' => 'mimes:jpg,jpeg,png|max:2048',
@@ -41,7 +41,7 @@ class AdminProductController extends Controller
 
         if ($request->hasFile('img')) {
             $img = $request->file('img');
-            $file_name = time() . '_' . $product->name . '_' . $img->getClientOriginalExtension();
+            $file_name = time() . '.' . $img->getClientOriginalExtension();
             $product->img = $file_name;
             $product->update();
             $img->move('../public/assets/img/', $file_name);
@@ -57,7 +57,7 @@ class AdminProductController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'type_id' => 'required',
-            'desc' => 'max:255',
+            'desc' => 'max:500',
             'quantity' => 'required|numeric',
             'price' => 'required',
             'img' => 'mimes:jpg,jpeg,png|max:2048',
@@ -74,7 +74,7 @@ class AdminProductController extends Controller
 
         if ($request->hasFile('img')) {
             $img = $request->file('img');
-            $file_name = time() . '_' . $product->name . '_' . $img->getClientOriginalExtension();
+            $file_name = time() . '.' . $img->getClientOriginalExtension();
             $product->img = $file_name;
             $product->update();
             $img->move('../public/assets/img/', $file_name);

@@ -37,7 +37,7 @@
                                 <option selected disabled>{{ __('Select Category') }}</option>
                                 @foreach ($types as $type)
                                     <option value="{{ $type->id }}">
-                                        {{ $type->category->name }} ({{ $type->name }})</option>
+                                        {{ $type->category->name ?? '-' }} ({{ $type->name }})</option>
                                 @endforeach
                             </select>
                             @error('type_id')
@@ -72,7 +72,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Tutup') }}</button>
-                <button type="submit" class="btn btn-primary">{{ __('Simpan') }}</button>
+                <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
             </div>
             </form>
         </div>

@@ -13,7 +13,7 @@ class AdminTypeController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $types = Type::all()->reverse();
+        $types = Type::all();
         return view('admin.type.index', compact('categories', 'types'));
     }
 
@@ -22,7 +22,7 @@ class AdminTypeController extends Controller
         $request->validate([
             'category_id' => 'required',
             'name' => 'required|max:255',
-            'desc' => 'max:255',
+            'desc' => 'max:500',
             'img' => 'mimes:jpg,jpeg,png|max:2048',
         ]);
 
@@ -37,7 +37,7 @@ class AdminTypeController extends Controller
 
         if ($request->hasFile('img')) {
             $img = $request->file('img');
-            $file_name = time() . '_' . $type->name . '_' . $img->getClientOriginalExtension();
+            $file_name = time() . '.' . $img->getClientOriginalExtension();
             $type->img = $file_name;
             $type->update();
             $img->move('../public/assets/img/', $file_name);
@@ -53,7 +53,7 @@ class AdminTypeController extends Controller
         $request->validate([
             'category_id' => 'required',
             'name' => 'required|max:255',
-            'desc' => 'max:255',
+            'desc' => 'max:500',
             'img' => 'mimes:jpg,jpeg,png|max:2048',
         ]);
 
@@ -66,7 +66,7 @@ class AdminTypeController extends Controller
 
         if ($request->hasFile('img')) {
             $img = $request->file('img');
-            $file_name = time() . '_' . $type->name . '_' . $img->getClientOriginalExtension();
+            $file_name = time() . '.' . $img->getClientOriginalExtension();
             $type->img = $file_name;
             $type->update();
             $img->move('../public/assets/img/', $file_name);

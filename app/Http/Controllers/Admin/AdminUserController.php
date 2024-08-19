@@ -35,17 +35,6 @@ class AdminUserController extends Controller
                 'location' => 'required',
                 'password' => 'required',
                 'role' => 'required'
-            ],
-            [
-                'name.required' => 'name harus diisi!',
-                'name.max' => 'name maksimal 255 karakter!',
-                'email.required' => 'Email harus diisi!',
-                'email.max' => 'Email maksimal 255 karakter!',
-                'email.unique' => 'Email sudah terdaftar!',
-                'no_hp.required' => 'No HP harus diisi!',
-                'location.required' => 'location harus diisi!',
-                'password.required' => 'Password harus diisi!',
-                'role.required' => 'Roles harus diisi!'
             ]
         );
 
@@ -56,11 +45,9 @@ class AdminUserController extends Controller
             'location' => $request->location,
             'password' => Hash::make($request->password),
             'role' => $request->role,
-            'created_at' => now(),
-            'updated_at' => now(),
         ]);
 
-        return back()->with('alert', 'Berhasil Tambah User!');
+        return back()->with('alert', 'Success Create User!');
     }
 
     public function update(Request $request, string $id)
@@ -72,15 +59,6 @@ class AdminUserController extends Controller
                 'no_hp' => 'required',
                 'location' => 'required',
                 'role' => 'required'
-            ],
-            [
-                'name.required' => 'name harus diisi!',
-                'name.max' => 'name maksimal 255 karakter!',
-                'email.required' => 'Email harus diisi!',
-                'email.max' => 'Email maksimal 255 karakter!',
-                'no_hp.required' => 'No HP harus diisi!',
-                'location.required' => 'location harus diisi!',
-                'role.required' => 'Roles harus diisi!'
             ]
         );
 
@@ -93,10 +71,9 @@ class AdminUserController extends Controller
                 'location' => $request->location,
                 'password' => Hash::make($request->password),
                 'role' => $request->role,
-                'updated_at' => now()
             ]
         );
-        return back()->with('alert', 'Berhasil Edit User!');
+        return back()->with('alert', 'Success Edit User!');
     }
 
     public function destroy(string $id)
@@ -104,6 +81,6 @@ class AdminUserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
 
-        return back()->with('alert', 'Berhasil Hapus User!');
+        return back()->with('alert', 'Success Delete User!');
     }
 }

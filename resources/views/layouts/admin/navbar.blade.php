@@ -12,7 +12,8 @@
         <li class="nav-item">
             <div class="user-panel d-flex">
                 <div class="info">
-                    <a href="#" class="d-block text-white">{{ auth()->user()->name }}</a>
+                    <a href="{{ route('profile.edit') }}"
+                        class="d-block text-white">{{ Str::limit(auth()->user()->name, 15) }}</a>
                 </div>
                 <div class="image">
                     @if (Auth::user()->foto_user != null)

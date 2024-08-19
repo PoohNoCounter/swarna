@@ -11,7 +11,7 @@ class AdminCategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::all()->reverse();
+        $categories = Category::all();
         return view('admin.category.index', compact('categories'));
     }
 
@@ -19,7 +19,7 @@ class AdminCategoryController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
-            'desc' => 'max:255',
+            'desc' => 'max:500',
             'img' => 'mimes:jpg,jpeg,png|max:2048',
         ]);
 
@@ -33,7 +33,7 @@ class AdminCategoryController extends Controller
 
         if ($request->hasFile('img')) {
             $img = $request->file('img');
-            $file_name = time() . '_' . $category->name . '_' . $img->getClientOriginalExtension();
+            $file_name = time() . '.' . $img->getClientOriginalExtension();
             $category->img = $file_name;
             $category->update();
             $img->move('../public/assets/img/', $file_name);
@@ -48,7 +48,7 @@ class AdminCategoryController extends Controller
 
         $request->validate([
             'name' => 'required|max:255',
-            'desc' => 'max:255',
+            'desc' => 'max:500',
             'img' => 'mimes:jpg,jpeg,png|max:2048',
         ]);
 
@@ -60,7 +60,7 @@ class AdminCategoryController extends Controller
 
         if ($request->hasFile('img')) {
             $img = $request->file('img');
-            $file_name = time() . '_' . $category->name . '_' . $img->getClientOriginalExtension();
+            $file_name = time() . '.' . $img->getClientOriginalExtension();
             $category->img = $file_name;
             $category->update();
             $img->move('../public/assets/img/', $file_name);

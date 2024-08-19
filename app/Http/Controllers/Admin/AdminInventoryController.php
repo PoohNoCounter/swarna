@@ -22,7 +22,7 @@ class AdminInventoryController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'type_id' => 'required',
-            'desc' => 'max:255',
+            'desc' => 'max:500',
             'img' => 'mimes:jpg,jpeg,png|max:2048',
         ]);
 
@@ -37,7 +37,7 @@ class AdminInventoryController extends Controller
 
         if ($request->hasFile('img')) {
             $img = $request->file('img');
-            $file_name = time() . '_' . $inventory->name . '_' . $img->getClientOriginalExtension();
+            $file_name = time() . '.' . $img->getClientOriginalExtension();
             $inventory->img = $file_name;
             $inventory->update();
             $img->move('../public/assets/img/', $file_name);
@@ -53,7 +53,7 @@ class AdminInventoryController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'type_id' => 'required',
-            'desc' => 'max:255',
+            'desc' => 'max:500',
             'img' => 'mimes:jpg,jpeg,png|max:2048',
         ]);
 
@@ -66,7 +66,7 @@ class AdminInventoryController extends Controller
 
         if ($request->hasFile('img')) {
             $img = $request->file('img');
-            $file_name = time() . '_' . $inventory->name . '_' . $img->getClientOriginalExtension();
+            $file_name = time() . '.' . $img->getClientOriginalExtension();
             $inventory->img = $file_name;
             $inventory->update();
             $img->move('../public/assets/img/', $file_name);

@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\AdminInventoryController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminBookingController;
 use App\Http\Controllers\Admin\AdminScheduleController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Client\ClientCartController;
 use App\Http\Controllers\Client\ClientBookingController;
 use App\Http\Controllers\Client\ClientProductController;
@@ -23,7 +24,6 @@ use App\Http\Controllers\Client\ClientScheduleController;
 // CLIENT SIDE
 Route::get('/', [HomeController::class, 'index'])->name('beranda');
 Route::get('/category/{id}', [HomeController::class, 'show'])->name('beranda.detail');
-Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/product', [ClientProductController::class, 'index'])->name('product.index');
 Route::get('/product/{id}', [ClientProductController::class, 'show'])->name('product.show');
 Route::get('/schedule', [ClientScheduleController::class, 'index'])->name('schedule.index');
@@ -43,9 +43,12 @@ Route::post('/register', [RegisterController::class, 'create'])->name('regist');
 Route::middleware(['auth'])->group(function () {
 
   Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+  Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+  Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
   Route::post('/product/store', [ClientProductController::class, 'cart'])->name('product.store');
   Route::get('/cart', [ClientCartController::class, 'index'])->name('cart');
-  Route::get('/cart/{id}', [ClientCartController::class, 'update'])->name('cart.update');
+  Route::get('/cart/{id}', [ClientCartController::class, 'show'])->name('cart.show');
+  Route::get('/cart/{id}/update', [ClientCartController::class, 'update'])->name('cart.update');
   Route::delete('/cart/{id}/destroy', [ClientCartController::class, 'destroy'])->name('cart.destroy');
   Route::get('/booking', [ClientBookingController::class, 'index'])->name('booking');
   Route::get('/booking/{id}', [ClientBookingController::class, 'show'])->name('booking.show');

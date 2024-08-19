@@ -29,15 +29,17 @@
             @foreach ($products as $product)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $product->type->category->name ?? '-' }} ({{ $product->type->name ?? '-' }})</td>
-                    <td>{{ $product->name ?? '-' }}</td>
-                    <td class="d-none d-lg-table-cell">{{ $product->desc ?? '-' }}</td>
+                    <td>{{ Str::limit($product->type->category->name ?? '-', 12) }}
+                        ({{ $product->type->name ?? '-' }})
+                    </td>
+                    <td>{{ Str::limit($product->name ?? '-', 12) }}</td>
+                    <td class="d-none d-lg-table-cell">{{ Str::limit($product->desc, 30) ?? '-' }}</td>
                     <td class="d-none d-lg-table-cell">{{ $product->quantity ?? '0' }}</td>
                     <td class="d-none d-lg-table-cell">{{ $product->price ?? '-' }}</td>
                     <td class="d-none d-lg-table-cell">
                         @if ($product->img == null)
-                            <img src="{{ asset('assets/profile/default.png') }}" alt="{{ $product->name }}"
-                                width="100">
+                            <img src="{{ asset('assets/profile/default.png') }}"
+                                alt="{{ Str::limit($product->name ?? '-', 12) }}" width="100">
                         @else
                             <a href="#" data-toggle="modal" data-target="#myModal{{ $product->id }}">
                                 <img class="img img-fluid rounded" src="{{ asset('assets/img/' . $product->img) }}"
@@ -52,7 +54,8 @@
                                         <div class="modal-body">
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <h3 class="card-title">{{ $product->name }}</h3>
+                                                    <h3 class="card-title">{{ Str::limit($product->name ?? '-', 12) }}
+                                                    </h3>
                                                     <div class="card-tools">
                                                         <button type="button" class="btn btn-tool"
                                                             data-card-widget="maximize"><i

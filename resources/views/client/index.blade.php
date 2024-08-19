@@ -14,14 +14,14 @@ use Carbon\Carbon;
         <div class="my-5 secondary-bg">
             <img class="img img-fluid m-0 p-0" src="{{ asset('assets/img/bg.png') }}" alt="">
             <div class="container py-3">
-                <div class="row py-3">
+                <div class="row py-3 d-flex justify-content-center">
                     @foreach ($categories as $category)
                         <a href="{{ route('beranda.detail', $category->id) }}" class="col-4 col-md-1">
                             <div class="card border rounded px-2">
                                 <img class="img img-fluid" loading="fuzy" width="100px"
                                     src="{{ asset('assets/img/' . $category->img) }}" alt="">
                             </div>
-                            <p class="mt-0 text-white mb-3">{{ $category->name }}</p>
+                            <p class="mt-0 text-white mb-3">{{ Str::limit($category->name ?? '-', 12) }}</p>
                         </a>
                     @endforeach
                 </div>
@@ -38,14 +38,14 @@ use Carbon\Carbon;
                 <h4 class="text-left py-1 fw-bold">EVENT/SERVICES</h4>
                 @foreach ($schedules as $schedule)
                     <a href="{{ route('schedule.show', $schedule->id) }}" class="col-6 col-md-3">
-                        <div class="card border rounded p-2">
+                        <div class="card bg-primary border rounded p-2">
                             <p class="text-left">{{ Carbon::parse($schedule->datetime)->translatedFormat('d F Y') }}
                             </p>
                             <h3 class="text-left">{{ Carbon::parse($schedule->datetime)->translatedFormat('l') }}</h3>
-                            <h3 class="text-left fw-bold">{{ $schedule->name }}</h3>
-                            <p class="text-left border-bottom pb-2">{{ $schedule->location }}</p>
+                            <h3 class="text-left fw-bold">{{ Str::limit($schedule->name ?? '-', 12) }}</h3>
+                            <p class="text-left border-bottom pb-2">{{ Str::limit($schedule->location ?? '-', 30) }}</p>
                             <h4 class="text-left fw-bold">Event Description</h4>
-                            <p class="text-left">{{ $schedule->desc }}</p>
+                            <p class="text-left">{{ Str::limit($schedule->desc ?? '-', 30) }}</p>
                         </div>
                     </a>
                 @endforeach
@@ -62,8 +62,9 @@ use Carbon\Carbon;
                             </div>
                             <p class="my-0 text-left fw-bold">Rp{{ number_format($product->price ?? 0, 0, ',', '.') }}/day
                             </p>
-                            <p class="my-0 text-left">{{ $product->name }} - {{ $product->type->category->name }}
-                                ({{ $product->type->name }})
+                            <p class="my-0 text-left">{{ Str::limit($product->name ?? '-', 20) }} <br>
+                                {{ Str::limit($product->type->category->name ?? '-', 12) }}
+                                ({{ Str::limit($product->type->name ?? '-', 12) }})
                             </p>
                         </div>
                     </a>

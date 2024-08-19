@@ -1,15 +1,15 @@
 @extends('layouts.client.app')
 
-@section('title', 'Detail Booking')
+@section('title', 'Detail Cart')
 
-@section('textBooking', 'primary-bg text-white rounded')
+@section('textCart', 'primary-bg text-white rounded')
 
 @section('content')
 
     <div class="py-5">
         <div class="container pt-5 pb-3">
             <div class="row">
-                <a href="{{ route('booking') }}"><i class="fa fa-arrow-left text-dark mb-3"></i></a>
+                <a href="{{ route('cart') }}"><i class="fa fa-arrow-left text-dark mb-3"></i></a>
                 <div class="col-md-9">
                     <div class="card">
                         <div class="row m-0 p-3">

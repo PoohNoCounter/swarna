@@ -15,8 +15,8 @@
         <thead>
             <tr>
                 <th>{{ __('No') }}</th>
-                <th>{{ __('Name') }}</th>
                 <th class="d-none d-lg-table-cell">{{ __('Category') }}</th>
+                <th>{{ __('Name') }}</th>
                 <th class="d-none d-lg-table-cell">{{ __('Description') }}</th>
                 <th class="d-none d-lg-table-cell">{{ __('Image') }}</th>
                 <th>{{ __('Action') }}</th>
@@ -26,13 +26,13 @@
             @foreach ($types as $type)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $type->category->name ?? '-' }}</td>
-                    <td>{{ $type->name ?? '-' }}</td>
-                    <td class="d-none d-lg-table-cell">{{ $type->desc ?? '-' }}</td>
+                    <td>{{ Str::limit($type->category->name ?? '-', 12) }}</td>
+                    <td>{{ Str::limit($type->name ?? '-', 12) }}</td>
+                    <td class="d-none d-lg-table-cell">{{ Str::limit($type->desc, 30) ?? '-' }}</td>
                     <td class="d-none d-lg-table-cell">
                         @if ($type->img == null)
-                            <img src="{{ asset('assets/profile/default.png') }}" alt="{{ $type->name }}"
-                                width="100">
+                            <img src="{{ asset('assets/profile/default.png') }}"
+                                alt="{{ Str::limit($type->name ?? '-', 12) }}" width="100">
                         @else
                             <a href="#" data-toggle="modal" data-target="#myModal{{ $type->id }}">
                                 <img class="img img-fluid rounded" src="{{ asset('assets/img/' . $type->img) }}"
@@ -47,7 +47,8 @@
                                         <div class="modal-body">
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <h3 class="card-title">{{ $type->name }}</h3>
+                                                    <h3 class="card-title">{{ Str::limit($type->name ?? '-', 12) }}
+                                                    </h3>
                                                     <div class="card-tools">
                                                         <button type="button" class="btn btn-tool"
                                                             data-card-widget="maximize"><i
@@ -83,8 +84,8 @@
         <tfoot>
             <tr>
                 <th>{{ __('No') }}</th>
-                <th>{{ __('Name') }}</th>
                 <th class="d-none d-lg-table-cell">{{ __('Category') }}</th>
+                <th>{{ __('Name') }}</th>
                 <th class="d-none d-lg-table-cell">{{ __('Description') }}</th>
                 <th class="d-none d-lg-table-cell">{{ __('Image') }}</th>
                 <th>{{ __('Action') }}</th>

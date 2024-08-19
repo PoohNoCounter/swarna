@@ -27,11 +27,12 @@
                     @error('password')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
+                    <a href="https://wa.me/+62081286388882" class="primary-color">forgot password?</a>
                     <button type="submit" class="btn btn-block aktif mt-3 primary-bg">Login</button>
                 </form>
             </div>
-            <div class="">
-                <p class="text-center mt-3">Don't have an account? <a class="text-decoration-none primary-color"
+            <div class="mt-3">
+                <p class="text-center">Don't have an account? <a class="text-decoration-none primary-color"
                         href="{{ route('register') }}">Register</a></p>
             </div>
         </div>

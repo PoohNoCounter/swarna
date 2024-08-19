@@ -11,7 +11,7 @@ class AdminScheduleController extends Controller
 {
     public function index()
     {
-        $categories = Schedule::all()->reverse();
+        $categories = Schedule::all();
         return view('admin.schedule.index', compact('categories'));
     }
 
@@ -19,7 +19,7 @@ class AdminScheduleController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
-            'desc' => 'max:255',
+            'desc' => 'max:500',
             'datetime' => 'required',
             'location' => 'required',
             'img' => 'mimes:jpg,jpeg,png|max:2048',
@@ -37,7 +37,7 @@ class AdminScheduleController extends Controller
 
         if ($request->hasFile('img')) {
             $img = $request->file('img');
-            $file_name = time() . '_' . $schedule->name . '_' . $img->getClientOriginalExtension();
+            $file_name = time() . '.' . $img->getClientOriginalExtension();
             $schedule->img = $file_name;
             $schedule->update();
             $img->move('../public/assets/img/', $file_name);
@@ -52,7 +52,7 @@ class AdminScheduleController extends Controller
 
         $request->validate([
             'name' => 'required|max:255',
-            'desc' => 'max:255',
+            'desc' => 'max:500',
             'datetime' => 'required',
             'location' => 'required',
             'img' => 'mimes:jpg,jpeg,png|max:2048',
@@ -68,7 +68,7 @@ class AdminScheduleController extends Controller
 
         if ($request->hasFile('img')) {
             $img = $request->file('img');
-            $file_name = time() . '_' . $schedule->name . '_' . $img->getClientOriginalExtension();
+            $file_name = time() . '.' . $img->getClientOriginalExtension();
             $schedule->img = $file_name;
             $schedule->update();
             $img->move('../public/assets/img/', $file_name);

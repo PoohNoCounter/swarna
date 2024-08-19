@@ -20,10 +20,12 @@ return new class extends Migration
             $table->foreignId('product_id')->nullable();
             $table->text('location')->nullable();
             $table->string('status')->nullable()->default('Waiting');
-            $table->dateTime('rental_date')->nullable();
-            $table->dateTime('return_date')->nullable();
+            $table->date('rental_date')->nullable();
+            $table->date('return_date')->nullable();
             $table->integer('quantity')->nullable()->default(0);
             $table->integer('total')->nullable()->default(0);
+            $table->string('command')->default('send:booking-notifications');
+            $table->string('command_return')->default('send:deadline-notifications');
             $table->timestamps();
         });
     }

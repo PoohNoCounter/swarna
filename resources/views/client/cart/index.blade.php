@@ -17,29 +17,30 @@
                                     aria-labelledby="masuk-tab">
                                     @foreach ($bookings->where('status', 'Cart') as $booking)
                                         @if ($booking->User->id == auth()->user()->id)
-                                            <a href="{{ route('booking.show', $booking->id) }}"
+                                            <a href="{{ route('cart.show', $booking->id) }}"
                                                 class="card card-warning card-outline py-3 px-4">
                                                 <div class="row">
                                                     <div class="col-md-1 mb-3">
-                                                        @if ($booking->Product->img == null)
+                                                        @if ($booking->product->img == null)
                                                             <img class="img img-fluid rounded pt-4"
                                                                 src="{{ asset('assets/profile/default.png') }}"
-                                                                alt="{{ $booking->Product->name }}" width="100">
+                                                                alt="{{ Str::limit($booking->product->name ?? '-', 12) }}"
+                                                                width="100">
                                                         @else
                                                             <img class="img img-fluid rounded pt-4"
-                                                                src="{{ asset('assets/img/' . $booking->Product->img) }}"
-                                                                alt="{{ $booking->Product->img }}" width="100"
+                                                                src="{{ asset('assets/img/' . $booking->product->img) }}"
+                                                                alt="{{ $booking->product->img }}" width="100"
                                                                 loading="lazy">
                                                         @endif
                                                     </div>
                                                     <div class="col-md-5 mb-3">
-                                                        <h3>{{ $booking->Product->name }}</h3>
+                                                        <h3>{{ Str::limit($booking->product->name ?? '-', 12) }}</h3>
                                                         <p>Qty : {{ $booking->quantity }}</p>
                                                         <div>No. Booking</div>
                                                         <div>Booking Time</div>
                                                     </div>
                                                     <div class="col-md-6 mb-3 text-right">
-                                                        <p>Rp{{ number_format($booking->Product->price ?? 0, 0, ',', '.') }}
+                                                        <p>Rp{{ number_format($booking->product->price ?? 0, 0, ',', '.') }}
                                                         </p>
                                                         <h3 class="font-weight-bold">Total :
                                                             Rp{{ number_format($booking->total ?? 0, 0, ',', '.') }}

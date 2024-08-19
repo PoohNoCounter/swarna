@@ -10,9 +10,9 @@
             <div class="card">
                 <div class="row m-0 p-3">
                     <div class="border-bottom">
-                        <h3 class="font-weight-bold">{{ $booking->Product->name }}</h3>
+                        <h3 class="font-weight-bold">{{ $booking->product->name }}</h3>
                         <p class="font-weight-bold">Sent Address</p>
-                        <p class="my-0">{{ $booking->User->name }} | <a
+                        <p class="my-0">{{ $booking->user->name }} | <a
                                 href="https://wa.me/+62{{ $booking->User->no_hp }}" class="text-success"><i
                                     class="fa fa-whatsapp"></i> {{ $booking->User->no_hp }}</a></p>
                         <p class="mt-0">{{ $booking->location }}</p>

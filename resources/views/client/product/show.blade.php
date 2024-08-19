@@ -27,12 +27,12 @@
                             <div class="mb-3 row">
                                 <div class="col-md-6">
                                     <label for="rental_date">Rental Date</label>
-                                    <input type="date" class="form-control" value="{{ old('rental_date') }}"
+                                    <input type="datetime-local" class="form-control" value="{{ old('rental_date') }}"
                                         name="rental_date" id="rental_date">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="return_date">Return Date</label>
-                                    <input type="date" class="form-control" value="{{ old('return_date') }}"
+                                    <input type="datetime-local" class="form-control" value="{{ old('return_date') }}"
                                         name="return_date" id="return_date">
                                 </div>
                             </div>
@@ -52,7 +52,9 @@
                         </form>
                         <div class="mb-3">
                             <h5 class="fw-bold">Product Type</h5>
-                            <p>{{ $product->type->category->name }} ({{ $product->type->name }})</p>
+                            <p>{{ Str::limit($product->type->category->name ?? '-', 12) }}
+                                ({{ Str::limit($product->type->name ?? '-', 12) }})
+                            </p>
                         </div>
                         <div class="mb-3">
                             <h5 class="fw-bold">Description</h5>

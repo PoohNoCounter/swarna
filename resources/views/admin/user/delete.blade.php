@@ -8,18 +8,18 @@
     <div class="modal-dialog ">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">{{ __('Hapus Data') }}
+                <h5 class="modal-title">{{ __('Delete Data') }}
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal">
                 </button>
             </div>
-            <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
+            <div class="modal-body">Are you sure you want to delete data?</div>
             <div class="modal-footer">
                 <form action="{{ route('admin.user.destroy', $user->id) }}" method="POST">
                     @method('DELETE')
                     @csrf
-                    <input type="submit" class="btn btn-danger light" name="" id="" value="Hapus">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">{{ __('Tidak') }}</button>
+                    <input type="submit" class="btn btn-danger light" name="" id="" value="Delete">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">{{ __('Cancel') }}</button>
                 </form>
             </div>
         </div>

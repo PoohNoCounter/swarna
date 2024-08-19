@@ -39,8 +39,9 @@
                                     <p class="my-0 text-left fw-bold">
                                         Rp{{ number_format($product->price ?? 0, 0, ',', '.') }}/day
                                     </p>
-                                    <p class="my-0 text-left">{{ $product->name }} - {{ $product->type->category->name }}
-                                        ({{ $product->type->name }})
+                                    <p class="my-0 text-left">{{ Str::limit($product->name ?? '-', 20) }} <br>
+                                        {{ Str::limit($product->type->category->name ?? '-', 12) }}
+                                        ({{ Str::limit($product->type->name ?? '-', 12) }})
                                     </p>
                                 </div>
                             </a>
